@@ -15,7 +15,7 @@ object neo{
 }
 
 object morfeo{
-    var estaDescansado = false
+    var estaDescansado = true
     var vitalidad = 8
 
     method esElElegido() {
@@ -42,6 +42,11 @@ object morfeo{
     method saltar(){
         vitalidad = vitalidad - 1
         self.cambiarEstado()
+    }
+
+    // para test
+    method estaDescansado(){
+        return estaDescansado
     }
 }
 

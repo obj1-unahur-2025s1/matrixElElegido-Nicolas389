@@ -1,9 +1,48 @@
+import matrix.*
 
+test "neo es el elegido" {
+    assert.equals(true, neo.esElElegido())
+}
 
-describe "group of tests " {
+test "si neo salta su vitalidad baja a la mitad"{
+  neo.saltar()
+  assert.equals(5,neo.vitalidad())
+}
 
-  test "test 01" {
-    assert.equals(100, 50+50)
-  }
+test "morfeo no es el elegido"{
+  assert.notEquals(true,morfeo.esElElegido())
+}
 
+test "morfeo esta descansado"{
+  assert.equals(true, morfeo.estaDescansado())
+}
+
+test "si morfeo salta su vitalidad actual baja un punto"{
+  morfeo.saltar()
+  assert.equals(7, morfeo.vitalidad())
+}
+
+test "trinity no es la elegida"{
+  assert.notEquals(true,trinity.esElElegido())
+}
+
+test "la nave cuenta con 3 pasajeros"{
+  assert.equals(3, nave.cantidadPasajeros())
+}
+
+test "trinity es la tripulante con menos vitalidad"{
+  assert.equals(trinity, nave.pasajeroDeMenorVitalidad())
+}
+
+test "neo es la tripulante con mas vitalidad"{
+  assert.equals(neo, nave.pasajeroDeMayorVitalidad())
+}
+
+test "la vitalidad de los pasajeros no esta equilibrada"{
+  assert.notEquals(true,nave.vitalidadEquilibrada())
+}
+
+test "si la nave choca queda vacia"{
+  nave.chocar()
+  assert.equals(0, nave.cantidadPasajeros())
 }
